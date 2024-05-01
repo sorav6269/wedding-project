@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="wed.css">
+    <link rel="stylesheet" href="script.js">
+</head>
+<style>
+    .login-main {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        -webkit-box-align: center;
+        align-items: center;
+        background: rgb(247, 246, 246);
+
+    }
+
+    .login-page {
+        width: 1000px;
+        height: 600px;
+        display: flex;
+        margin-top: 30px;
+        flex-direction: row;
+        background: rgb(255, 255, 255);
+    }
+
+    .login-img {
+        background: url(img/login.png) 100% center / cover no-repeat;
+        max-width: 400px;
+        color: rgb(255, 255, 255);
+        font-size: 40px;
+        line-height: 60px;
+        padding: 20px;
+        min-width: 400px;
+        height: 600px;
+    }
+
+    .login-text {
+        display: flex;
+        width: 100%;
+        overflow: scroll;
+        height: 100%;
+        flex-direction: column;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+    }
+
+    .upper-text {
+        display: flex;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .bd {
+        width: 100%;
+        min-height: 320px;
+        padding: 30px;
+
+    }
+
+    .bd-div {
+        margin-bottom: 40px;
+    }
+
+    .form-heading {
+        font-size: 29px;
+        text-align: center;
+        font-weight: 550;
+        color: #4a4a4a;
+        font-family: proxima-nova, sans-serif;
+    }
+
+    .input {
+        height: 50px;
+        padding: 10px 2px;
+        margin-top: 20px;
+        margin-bottom: unset;
+        width: 100%;
+        font-size: 14px;
+        position: relative;
+        border: 1px solid rgb(215, 215, 215);
+        border-radius: 2px;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        color: rgb(74, 74, 74);
+    }
+
+    .input-img {
+        border-right: 1px solid rgb(215, 215, 215);
+        padding: 0px 20px;
+        display: flex;
+        background-size: contain;
+        background-position: 50% center;
+        max-height: 26px;
+    }
+
+    .put {
+        visibility: hidden;
+        position: absolute;
+        border-right: 1px solid rgb(215, 215, 215);
+        padding: 0px 20px;
+        display: flex;
+        background-size: contain;
+        background-position: 50% center;
+        max-height: 26px;
+    }
+
+    .text-box {
+        font-family: proxima-nova, sans-serif;
+        outline: none;
+        width: 100%;
+        padding: 0px 20px;
+        border: transparent;
+    }
+.showbut{
+    visibility: hidden;
+    height: 40%;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    border: none;
+    color: #fff;
+    align-items: center;
+    background-color: #e72e77;
+}
+
+    .hr {
+        /* margin-bottom: 30px; */
+        margin-top: 50px;
+        opacity: 0.15;
+        border-right: none;
+        border-bottom: none;
+        border-left: none;
+        border-image: initial;
+        border-top: 1px solid rgb(215, 215, 215);
+        color: rgb(215, 215, 215);
+        overflow: visible;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        opacity: 1;
+
+    }
+
+    .hr::after {
+        background: rgb(255, 255, 255);
+        content: "OR";
+        font-size: 14px;
+        color: rgb(74, 74, 74);
+        padding: 0px 12px;
+        position: relative;
+        top: -13px;
+
+    }
+
+    .continue {
+        color: #4a4a4a;
+        font-size: 21px;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        font-weight: bolder;
+    }
+
+    .Others-login {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .social-icons-fb {
+        cursor: pointer;
+        display: flex;
+        width: 45%;
+        height: 50px;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        border: 1px solid rgb(215, 215, 215);
+        border-radius: 2px;
+        margin-right: 20px;
+    }
+
+    .social-icons-google {
+        cursor: pointer;
+        display: flex;
+        width: 45%;
+        height: 50px;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        border: 1px solid rgb(215, 215, 215);
+        border-radius: 2px;
+    }
+
+    .socal-img {
+        max-width: 100%;
+        height: 20px;
+        width: 20px;
+        margin-right: 5px;
+        display: inline-block;
+    }
+
+    .social-text {
+
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        unicode-bidi: isolate;
+
+    }
+
+    .social-text a{
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        unicode-bidi: isolate;
+        text-decoration: none;
+        color: #4a4a4a;
+    }
+
+    .login-bus {
+        margin-bottom: 30px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .margin-10 {
+        margin-right: 10px;
+    }
+
+    .Business {
+        background-color: #3498db;
+        color: #fff;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 40px;
+        line-height: 40px;
+    }
+  
+</style>
+
+<body>
+    <div class="main-contanior">
+        <nav class="upper">
+            <div class="upperlogo">India's Favourite Wedding Planning Platform</div>
+            <div class="city-menu">
+                <input type="text" class="cityinput" placeholder="All cities">
+                <div class="megamenu">
+                    <div class="search">
+                        <img src="/img/searcsh1.png" id="icon">
+                        <input type="text" placeholder="search Cities, State..." id="searchbox">
+                    </div>
+                    <div class="submenu">
+                        <h3 class="subheading">Top Cities</h3>
+                        <ul class="option">
+                            <li><a href="#">All Cities</a></li>
+                            <li><a href="#"> Delhi NCR</a></li>
+                            <li><a href="#"> Mumbai</a></li>
+                            <li><a href="#">Bangalore</a></li>
+                            <li><a href="#">Hyderabad</a></li>
+                            <li><a href="#">Chennai</a></li>
+                            <li><a href="#">Pune</a></li>
+                            <li><a href="#"> Kolkata</a></li>
+                            <li><a href="#">Lucknow</a></li>
+                            <li><a href="#">Jaipur</a></li>
+                        </ul>
+                    </div>
+                    <div class="submenu bg ">
+                        <h3 class="subheading up2">Popular Cities </h3>
+                        <ul class="option">
+                            <li><a href="#">Gurgaon</a></li>
+                            <li><a href="#">Goa</a></li>
+                            <li><a href="#">Udaipur</a></li>
+                            <li><a href="#">Ahmedabad</a></li>
+                            <li><a href="#">Indore</a></li>
+                            <li><a href="#">Chandigarh</a></li>
+                            <li><a href="#">Agra</a></li>
+                            <li><a href="#">Kanpur</a></li>
+                            <li><a href="#">Jodhpur</a></li>
+                            <li><a href="#">Bhopal</a></li>
+                        </ul>
+                    </div>
+                    <div class="submenu">
+                        <h3 class="subheading">Other Cities</h3>
+                        <ul class="option">
+                            <li><a href="#">Nagpur</a></li>
+                            <li><a href="#">Dehradun</a></li>
+                            <li><a href="#"> Thane</a></li>
+                            <li><a href="#">Surat</a></li>
+                            <li><a href="#">Vadodara</a></li>
+                            <li><a href="#">Visakhapatnam</a></li>
+                            <li><a href="#">Raipur</a></li>
+                            <li><a href="#"> Coimbatore</a></li>
+                            <li><a href="#">Ranchi</a></li>
+                            <li><a href="#">Mysore</a></li>
+                        </ul>
+                    </div>
+                    <div class="submenu bg ">
+                        <h3 class="subheading up2">States</h3>
+                        <ul class="option">
+                            <li><a href="#"> Kerala</a></li>
+                            <li><a href="#">Rajasthan</a></li>
+                            <li><a href="#"> Himachal Pradesh</a></li>
+                            <li><a href="#">Maharashtra</a></li>
+                        </ul>
+
+                        <h3 class="subheading International ">International Cities</h3>
+                        <ul class="option">
+                            <li><a href="#"> Dubai</a></li>
+                            <li><a href="#">Thailand</a></li>
+                            <li><a href="#"> Bali</a></li>
+                            <li><a href="#">Abu Dhabi</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="upper-right">
+                <a href="#" class="review">
+                    <img src="img/review.webp" id="reviewimg">
+                    <span id="review-text">Write A Review</span>
+                </a>
+                <span id="mobile">
+                    <img src="img/mobile.webp" id="mobile-icon">
+                    <span id="mobile-text">Download App</span>
+                </span>
+            </div>
+
+        </nav>
+
+        <nav class="lower">
+            <div class="header">
+                <a href="wedding.html" id="logo">
+                    <img src="img/lower-logo.svg">
+                </a>
+
+                <div class="lowermenu">
+                    <div class="submenus"><a href="">Venues</a>
+                        <div class="lower-megamenu">
+                            <div class="lowersubmenu">
+                                <h3 class="l-subheading">By Type</h3>
+                                <ul>
+                                    <li><a href="#">Banquet Halls</a></li>
+                                    <li><a href="#">Lawns / Farmhouses</a></li>
+                                    <li><a href="#">Wedding Resorts</a></li>
+                                    <li><a href="#">Small Function / Party Halls</a></li>
+                                    <li><a href="#">Destination Wedding</a></li>
+                                    <li><a href="#">Kalyana Mandapams</a></li>
+                                    <li><a href="#">4 Star & Above Wedding Hotels</a></li>
+                                    <li><a href="#">Venue Concierge Services</a></li>
+                                    <li id="allvenue"><a href="#">View All Venues</a></li>
+                                </ul>
+                            </div>
+                            <div class="lowersubmenu bg">
+                                <h3 class="l-subheading up2">By Locality</h3>
+                                <ul>
+                                    <li><a href="#">South Goa</a></li>
+                                    <li><a href="#">North Goa</a></li>
+                                    <li><a href="#">Ponda</a></li>
+                                    <li><a href="#">Calangute</a></li>
+                                    <li><a href="#">panjim</a></li>
+                                    <li><a href="#">Baga</a></li>
+                                    <li><a href="#">Calvale</a></li>
+                                    <li id="allvenue"><a href="#">More</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="destiwed">
+                                <h3 id="destiheading">Destination Wedding Venues</h3>
+                                <div class="desti-img">
+                                    <div class="subimg-heading">
+                                        <a href="#"><img src="/img/limg1.webp" alt="" class="subimg"></a>
+                                        <a href="#" id="desti-text">Goa</a>
+                                    </div>
+                                </div>
+                                <div class="desti-img">
+                                    <div class="subimg-heading">
+                                        <a href="#"><img src="/img/limg2.webp" alt="" class="subimg"></a>
+                                        <a href="#" id="desti-text">Jaipur</a>
+                                    </div>
+                                </div>
+                                <div class="desti-img">
+                                    <div class="subimg-heading">
+                                        <a href="#"><img src="/img/limg3.webp" alt="" class="subimg"></a>
+                                        <a href="#" id="desti-text">Udaipur</a>
+                                    </div>
+                                </div>
+                                <div class="desti-img">
+                                    <div class="subimg-heading">
+                                        <a href="#"><img src="/img/limg4.webp" alt="" class="subimg"></a>
+                                        <a href="#" id="desti-text">Jodhpur</a>
+                                    </div>
+                                </div>
+                                <div class="desti-img">
+                                    <div class="subimg-heading">
+                                        <a href="#"><img src="/img/limg5.webp" alt="" class="subimg"></a>
+                                        <a href="#" id="desti-text">Thailand</a>
+                                    </div>
+                                </div>
+                                <div class="desti-img">
+                                    <div class="subimg-heading">
+                                        <a href="#"><img src="/img/limg6.webp" alt="" class="subimg"></a>
+                                        <a href="#" id="desti-text">Jim Corbett</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="submenus"><a href="">Vendors</a>
+                        <div class="vendors-megamenu">
+                            <div class="vendors-submenu vendors">
+                                <h3 class="vendors-subheading">Photographers</h3>
+                                <ul>
+                                    <li><a href="#">Photographers</a></li>
+                                </ul>
+
+                                <h3 class="vendors-subheading">Makeup</h3>
+                                <ul>
+                                    <li><a href="#">Bridal Makeup</a></li>
+                                </ul>
+
+                                <h3 class="vendors-subheading">Pre Wedding Shoot</h3>
+                                <ul>
+                                    <li><a href="#">Pre wedding Photographers</a></li>
+                                </ul>
+
+                                <h3 class="vendors-subheading">Planning & Decore</h3>
+                                <ul>
+                                    <li><a href="#">Wedding Planners</a></li>
+                                    <li><a href="#">Decorators</a></li>
+                                    <li><a href="#">Small Function Decor <img src="img/vendors.png" alt="no img"
+                                                class="vendor-img"></a></li>
+                            </div>
+                            <div class="vendors-submenu vendors ">
+                                <h3 class="vendors-subheading">Bridal Wear</h3>
+                                <ul>
+                                    <li><a href="#">Bridal Lehengas</a></li>
+                                    <li><a href="#">Kanjeevaram / Silk Sarees</a></li>
+                                    <li><a href="#">Cocktail Gowns</a></li>
+                                    <li><a href="#">Trousseau Sarees</a></li>
+                                    <li><a href="#">Bridal Lehenga on Rent</a></li>
+                                    <li><a href="#" class="vendors-more">View All Bridal Wear</a></li>
+                                </ul>
+
+                                <h3 class="vendors-subheading">Groom Wear</h3>
+                                <ul>
+                                    <li><a href="#">Sherwani</a></li>
+                                    <li><a href="#">Wedding Suits / Tuxes</a></li>
+                                    <li><a href="#">Sherwani On Rent</a></li>
+                                    <li><a href="#" class="vendors-more">View All Groom Wear</a></li>
+                                </ul>
+                                <h3 class="vendors-subheading">Mehndi</h3>
+                                <ul>
+                                    <li><a href="#">Mehendi Artist</a></li>
+                                </ul>
+                            </div>
+                            <div class="vendors-submenu vendors">
+                                <h3 class="vendors-subheading">Jewellery & Accessories</h3>
+                                <ul>
+                                    <li><a href="#">Jewellery</a></li>
+                                    <li><a href="#">Flower Jewellery</a></li>
+                                    <li><a href="#">Bridal Jewellery on Rent</a></li>
+                                    <li><a href="#">Accessories</a></li>
+                                    <li><a href="#" class="vendors-more">View All Jewellery & Accessories</a></li>
+                                </ul>
+                                <h3 class="vendors-subheading">Invites & Gifts</h3>
+                                <ul>
+                                    <li><a href="#">Invitations</a></li>
+                                    <li><a href="#">Favors</a></li>
+                                    <li><a href="#">Trousseau Packers</a></li>
+                                    <li><a href="#">Invitation Gifts</a></li>
+                                    <li><a href="#">Mehndi Favors</a></li>
+                                    <li><a href="#" class="vendors-more">View All Invites & Gifts</a></li>
+                                </ul>
+
+                                <h3 class="vendors-subheading">Music & Dance</h3>
+                                <ul>
+                                    <li><a href="#">DJs</a></li>
+                                    <li><a href="#">Sangeet Choreographer</a></li>
+                                    <li><a href="#">Wedding Entertainment</a></li>
+                                </ul>
+                            </div>
+                            <div class="vendors-submenu  vendors">
+                                <h3 class="vendors-subheading up2">Food</h3>
+                                <ul>
+                                    <li><a href="#">Catering Services</a></li>
+                                    <li><a href="#">Cake</a></li>
+                                    <li><a href="#">Chaat & Food Stalls</a></li>
+                                    <li><a href="#">Bartenders</a></li>
+                                    <li><a href="#" class="vendors-more">View All Food</a></li>
+                                </ul>
+
+                                <h3 class="vendors-subheading">Pandits</h3>
+                                <ul>
+                                    <li><a href="#">Wedding Pandits</a></li>
+                                </ul>
+                                <h3 class="vendors-subheading">Honeymoon</h3>
+                                <ul>
+                                    <li><a href="#">Honeymoon Packeges</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submenus"><a href="">Photos</a>
+                        <div class="photo-megamenu">
+                            <div class="photo-submenu">
+                                <h3 class="p-subheading">Outfit</h3>
+                                <ul>
+                                    <li><a href="#">Bridal Lehenga</a></li>
+                                    <li><a href="#">Wedding Sarees</a></li>
+                                    <li><a href="#">Engagement</a></li>
+                                    <li><a href="#">Mehndi</a></li>
+                                    <li><a href="#">Blouse Designs</a></li>
+                                    <li><a href="" class="p-more">More</a></li>
+                                </ul>
+
+                                <h3 class="p-subheading">Jewellery & Accessories</h3>
+                                <ul>
+                                    <li><a href="#">Bridal Jewellery</a></li>
+                                    <li><a href="#">Engagement Rings</a></li>
+                                    <li><a href="#">Floral Jewellery</a></li>
+                                    <li><a href="" class="p-more">More</a></li>
+                                </ul>
+
+                                <h3 class="p-subheading">Mehndi</h3>
+                                <ul>
+                                    <li><a href="#">Arabic</a></li>
+                                    <li><a href="#">Mehndi Designs</a></li>
+                                    <li><a href="#">Simple</a></li>
+                                    <li><a href="#">Unique</a></li>
+                                    <li><a href="" class="p-more">More</a></li>
+                                </ul>
+                            </div>
+                            <div class="photo-submenu ">
+                                <h3 class="p-subheading">Dcore & Ideas</h3>
+                                <ul>
+                                    <li><a href="#">Wedding Decor</a></li>
+                                    <li><a href="#">Bridal Entry</a></li>
+                                    <li><a href="#">Groom Entry</a></li>
+                                    <li><a href="#">Wedding Games</a></li>
+                                    <li><a href="#" class="p-more">More</a></li>
+                                </ul>
+
+                                <h3 class="p-subheading">Wedding Card Designs</h3>
+                                <ul>
+                                    <li><a href="#">Designs</a></li>
+                                    <li><a href="#">Wedding Gifts</a></li>
+                                    <li><a href="#">Wedding Invitation</a></li>
+                                    <li><a href="#" class="p-more">More</a></li>
+                                </ul>
+                                <h3 class="p-subheading">Wedding Photography</h3>
+                                <ul>
+                                    <li><a href="#">Pre Wedding Shoot</a></li>
+                                    <li><a href="#">Wedding</a></li>
+                                    <li><a href="#">Wedding Photoshoots & Poses</a></li>
+                                    <li><a href="#" class="p-more">More</a></li>
+                                </ul>
+                            </div>
+                            <div class="photo-submenu">
+                                <h3 class="p-subheading">Groom Wear</h3>
+                                <ul>
+                                    <li><a href="#">Sherwani for Groom</a></li>
+                                    <li><a href="#">Wedding Suits for Groom</a></li>
+                                    <li><a href="#" class="p-more">More</a></li>
+                                </ul>
+                                <h3 class="p-subheading">Bridal Makeup & Hair</h3>
+                                <ul>
+                                    <li><a href="#">Bridal Makeup</a></li>
+                                    <li><a href="#">Bridal Hairstyles</a></li>
+                                    <li><a href="#">Engagement</a></li>
+                                    <li><a href="#">Mehndi</a></li>
+                                    <li><a href="#" class="p-more">More</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submenus"><a href="">Real Wedding</a>
+                        <div class="lower-megamenu">
+                            <div class="blogsubmenu shop ">
+                                <h3 class="blog-subheading">By City</h3>
+                                <ul>
+                                    <li><a href="#">Mumbai</a></li>
+                                    <li><a href="#">Bangalore</a></li>
+                                    <li><a href="#">Pune</a></li>
+                                    <li><a href="#">Kolkata</a></li>
+                                    <li><a href="#">Jaipur</a></li>
+                                    <li id="allvenue"><a href="#">Others</a></li>
+                                </ul>
+                            </div>
+                            <div class="blogsubmenu bg ">
+                                <h3 class="blog-subheading up3">By Culture</h3>
+                                <ul>
+                                    <li><a href="#">Maharashtrian</a></li>
+                                    <li><a href="#">Panjabi / Sikh</a></li>
+                                    <li><a href="#">Bengali</a></li>
+                                    <li><a href="#">Gujarati</a></li>
+                                    <li><a href="#">Marwari</a></li>
+                                    <li><a href="#">Telugu</a></li>
+                                    <li id="allvenue"><a href="#">Others</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="blogsubmenu ">
+                                <h3 class="blog-subheading">By Theme</h3>
+                                <ul>
+                                    <li><a href="#">Destination</a></li>
+                                    <li><a href="#">Grand & Luxurious</a></li>
+                                    <li><a href="#">Pocket Friendly Stunners</a></li>
+                                    <li><a href="#">Intimate & Minimalist</a></li>
+                                    <li><a href="#">Modern & Stylish</a></li>
+                                    <li><a href="#"> International</a></li>
+                                    <li id="allvenue"><a href="#">Others</a></li>
+                                </ul>
+                            </div>
+                            <div class="blogsubmenu bg ">
+                                <h3 class="shop-subheading">Latest Real Wedding</h3>
+                                <div class="blogimg">
+                                    <a href="#"><img src="img/wed1.webp" alt="no img"></a>
+                                    <a href="#" id="blogtext">Vedika and Omair (Jaisalmer)</a>
+                                </div>
+                                <div class="blogimg">
+                                    <a href="#"><img src="img/wed2.webp" alt="no img"></a>
+                                    <a href="#" id="blogtext">Ishna and Anmol (Goa)</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="submenus"><a href="">Blog</a>
+                        <div class="lower-megamenu">
+                            <div class="blogsubmenu shop ">
+                                <h3 class="blog-subheading">Browse by Category</h3>
+                                <ul>
+                                    <li><a href="#">Bridal Makeup</a></li>
+                                    <li><a href="#">Honeymoon Travel</a></li>
+                                    <li><a href="#">Wedding Songs and Videos</a></li>
+                                    <li><a href="#">Bridal Hairstyles</a></li>
+                                    <li><a href="#">Wedding Decor Ideas</a></li>
+                                    <li><a href="#">Bridal Style Advice</a></li>
+                                    <li><a href="#">Wedding Gifts and Favors</a></li>
+                                    <li><a href="#">Budget Weddings</a></li>
+                                    <li id="allvenue"><a href="#">View More</a></li>
+                                </ul>
+                            </div>
+                            <div class="blogsubmenu bg ">
+                                <h3 class="blog-subheading up3">Popular Sections</h3>
+                                <ul>
+                                    <li><a href="#">South Indian wedding</a></li>
+                                    <li><a href="#">Real Brides Reveal</a></li>
+                                    <li><a href="#">Bridal Buys</a></li>
+                                    <li><a href="#">Real Wedding</a></li>
+                                    <li><a href="#">Mehendi Ideas</a></li>
+                                    <li><a href="#">Indian Wedding Ideas</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="blogsubmenu ">
+                                <h3 class="blog-subheading">Most Searched Blogs</h3>
+                                <ul>
+                                    <li><a href="#">Wedding Songs</a></li>
+                                    <li><a href="#">Best Bridal Entry Songs</a></li>
+                                    <li><a href="#">Chandni Chowk Lehengas</a></li>
+                                    <li><a href="#">Best Groom Entry Songs</a></li>
+                                    <li><a href="#">Bridal Mehendi Designs</a></li>
+                                    <li><a href="#">2023 Marriage Dates</a></li>
+                                    <li><a href="#">Wittiest Wedding Hashtags</a></li>
+                                    <li><a href="#">Best Bridal Hairstyles</a></li>
+                                    <li><a href="#">Latest Sabyasachi Lehengas</a></li>
+                                    <li><a href="#">Bridal Blouse Designs</a></li>
+                                </ul>
+                            </div>
+                            <div class="blogsubmenu bg ">
+                                <h3 class="shop-subheading up3">Top Blogs</h3>
+                                <div class="blogimg">
+                                    <a href="#"><img src="img/blog1.webp" alt="no img"></a>
+                                    <a href="#" id="blogtext">Bridal Mehendi Designs</a>
+                                </div>
+                                <div class="blogimg">
+                                    <a href="#"><img src="img/blog2.webp" alt="no img"></a>
+                                    <a href="#" id="blogtext">Honeymoon Hotels</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="submenus"><a href="">Shop</a>
+                        <div class="lower-megamenu">
+                            <div class="lowersubmenu shop ">
+                                <h3 class="l-subheading">Bridal Wear</h3>
+                                <ul>
+                                    <h3 class="shop-subheading">By Type</h3>
+                                    <li><a href="#">Bridal Lehenga</a></li>
+                                    <li><a href="#">Lehenga</a></li>
+                                    <li><a href="#">Sarees</a></li>
+                                    <li><a href="#">Gowns</a></li>
+                                    <li><a href="#">Sharara</a></li>
+                                    <li><a href="#">Anarkali</a></li>
+                                    <li><a href="#">Drape Sarees</a></li>
+                                    <li><a href="#">Indo Western</a></li>
+                                    <li id="allvenue"><a href="#">View More</a></li>
+                                </ul>
+                            </div>
+                            <div class="lowersubmenu bg  shop">
+                                <ul>
+                                    <h3 class="shop-subheading up3">By Occasion</h3>
+                                    <li><a href="#">Engagement</a></li>
+                                    <li><a href="#">Haldi</a></li>
+                                    <li><a href="#">Mehndi</a></li>
+                                    <li><a href="#">Cocktail</a></li>
+                                    <li><a href="#">Wedding</a></li>
+                                    <li><a href="#">Reception</a></li>
+                                    <li><a href="#">Sangeet</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="lowersubmenu shop">
+                                <ul>
+                                    <h3 class="shop-subheading">Most Popular</h3>
+                                    <li><a href="#">Engagement lehenga</a></li>
+                                    <li><a href="#">Cocktail Gowns</a></li>
+                                    <li><a href="#">Reception Lehenga</a></li>
+                                    <li><a href="#">Wedding Sarees</a></li>
+                                    <li><a href="#">Lehenga Drape Sarees</a></li>
+                                    <li><a href="#">Silk Sarees</a></li>
+                                    <li><a href="#">Banarasi Lehenga</a></li>
+                                    <li><a href="#">Red Bridal Lehenga</a></li>
+                                    <li id="allvenue"><a href="#">View More</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submenus"><a href="">E-Invites</a>
+
+                        <div class=" E-invite">
+                            <div class="lowersubmenu">
+                                <h3 class="l-subheading">Wedding Invitation Maker</h3>
+                                <ul>
+                                    <li><a href="#" class="invite-text">Wedding Card Designs </a></li>
+                                    <li><a href="#" class="invite-text"> Invitation Video Templates</a></li>
+                                    <li><a href="#" class="invite-text">Save the Date Templates</a></li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="rightsearch">
+                        <img src="img/search1.webp" alt="no img" id="righticon">
+                    </div>
+                    <div class="login">
+                        <span id="logintext" ><a href="login.html">Log In</a></span>
+                    </div>
+                </div>
+        </nav>
+
+    </div>
+    <div class="login-main">
+        <div class="login-page">
+            <div class="login-img">India’s Favourite Wedding Planning Platform</div>
+            <div class="login-text">
+                <div class="upper-text">
+                    <form class="bd">
+                        <div class="bd-div">
+                            <p class="form-heading">Sign In/Sign Up</p>
+                            <div class="input">
+                                <img src="img/input.svg" alt="no img" class="input-img">
+                                <img src="img/emailicon.svg" alt="no img" class="put">
+                                <input class="text-box" placeholder="Enter email or mobile*" name="emailOrPhone"
+                                    value="">
+                            </div>
+                            <div class="relative margin-b-5 margin-t-5 " style="height:15px"></div>
+                            <button disabled="disabled" type="submit"
+                                class="showbut">Continue</button>
+                            <hr class="hr">
+                            <p class="continue">Continue With</p>
+                        </div>
+                        <div class="Others-login">
+                            <div class="social-icons-fb">
+                                <img src="img/facebook.png" class="socal-img " alt="no img">
+                                <p class="social-text"><a href="www.facebook.com">Facebook</a></p>
+                            </div>
+                            <div class="social-icons-google">
+                                <img src="img/google.png" class="socal-img" alt="no img">
+                                <p class="social-text" "><a href=" www.google.com">Google</a></p>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <p class="login-bus">
+                    <span class="margin-10">Are you a vendor?</span>
+                    <span class="Business">Business Sign In</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="script.js">
+        let textbox = document.querySelector(".text-box")
+        textbox.addEventListener("click",()=>{
+            document.querySelector(".hr").classList.add(".ht")  
+        })
+    
+</script>
+
+</html> 
